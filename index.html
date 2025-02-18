@@ -944,6 +944,20 @@ html {
 #arrow-icon_s.rotate {
     transform: rotate(180deg);
 }
+
+table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
     </style> 
 
 </head> 
@@ -967,7 +981,22 @@ html {
     </div>
 
     <div class="schedule-container">
-        <h1 class="banner-heading">مواعيد اطباء العيادات التخصصية</h1>
+        <h1 class="banner-heading">اماكن دعم مرضى الانسولين</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>المكان</th>
+                    <th>العنوان</th>
+                    <th>الميعاد</th>
+                    <th>Location</th>
+                    <th>Phone Call</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+            </tbody>
+        </table>
+    
 
        <!-- <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
         <button class="next" onclick="moveSlide(1)">&#10095;</button>
@@ -978,186 +1007,36 @@ html {
 
 
 
-    <div class="today-date" id="today-date"></div> 
-
-    <div class="date-navigation"> 
-
-        <input type="date" id="end-date-picker"> 
-
-        <label class="label-dates" style="font-weight: bold" id="end-date-picker">إلى</label> 
-
-        <input type="date" id="start-date-picker"> 
-
-        <label class="label-dates" style="font-weight: bold" for="start-date-picker">من</label> 
-
-    </div> 
-
-    <div id="date-range-error" style="color: red; font-size: 14px; margin: 5px; display: none;"></div> 
-
-    <div class="date-navigation" id="calendar-buttons"> 
-
-        <button id="next-day">◀ القادم</button> 
-        <button id="prev-day">السابق ▶ </button> 
-
-        <button id="today-button">اليوم 📅</button>
-
-        <button id="search-button">بحث 🔍</button>
-
-
-    </div> 
-
-    <div class="print-button-container"> 
-        <button id="print-button">🖨️ طباعة الجدول</button> 
-    </div> 
-
-    <div id="loading-spinner" style="display: none;"> 
-       <div class="spinner"></div> 
-    </div> 
-</div>
-<div class="filters">
-    <div class="fill-settings-container">
-        <div id="clinic-filters" style="display: block;">
-            <span onclick="toggleFilters()" style="cursor: pointer; color:darkblue;font-weight:bold;"><span id="arrow-icon">▼</span>
-                اختار التخصص
-            </span>
-
-            <!-- New container for filter content -->
-            <div id="filter-content">
-                <div id="checkboxes-container"></div>
-                <div class="date-navigation" id="calendar-buttons">
-                    <button style=" border: 1px solid darkblue; border-radius: 10px; font-weight: bold;font-size:0.8rem;" id="show-all">✅ تحديد الكل</button>
-                    <button style=" border: 1px solid darkblue; border-radius: 10px; font-weight: bold;font-size:0.8rem;" id="hide-all">❌ الغاء الكل</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-</div>
-
-<div class="fill-settings-container">
-    <div id="settings-filters" style="display: block;">
-        <div class="settings-header" onclick="toggleSettings()" style="cursor: pointer;">
-            <span id="arrow-icon_s">▼</span>
-            <span style="color: rgb(124, 1, 1); font-weight: bold;">إعدادات الصفحة</span>
-        </div>
-
-        <!-- New container for settings content -->
-        <div id="settings-content">
-            <div class="setting-item">
-                <label for="font-size">حجم الخط:</label>
-                <div class="slider-container">
-                    <input type="range" id="font-size" min="50" max="200" value="100" step="10">
-                    <span id="font-size-percentage">100%</span>
-                </div>
-            </div>
-
-            <div class="setting-group">
-                <label class="checkbox-label">
-                    <input type="checkbox" id="toggleSelectedDates" checked>
-                    <span>تواريخ جدول العيادات</span>
-                </label>
-                <label class="checkbox-label">
-                    <input type="checkbox" id="toggleSelectedDays" checked>
-                    <span>أيام جدول العيادات</span>
-                </label>
-                <label class="checkbox-label">
-                    <input type="checkbox" id="toggleDayDates">
-                    <span>التاريخ + اليوم</span>
-                </label>
-            </div>
-
-            <div id="headline-settings" class="font-size-control">
-                <div class="setting-item">
-                    <label for="font-size-slider">حجم خط العنوان:</label>
-                    <div class="slider-container">
-                        <input type="range" id="font-size-slider" min="5" max="300" value="100" step="5">
-                        <span id="font-size-value">100%</span>
-                    </div>
-                </div>
-
-                <div class="setting-item">
-                    <label for="width-slider">عرض العنوان:</label>
-                    <div class="slider-container">
-                        <input type="range" id="width-slider" min="10" max="100" value="100" step="1">
-                        <span id="width-value">50%</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-    <div id="days-container"></div> 
-
     
 
     <script> 
 
-             const apiKey = 'AIzaSyDSTQcrDq1LklLe0Do7hSjFm2TogVrfRxE'; 
+const placesData = [
+            { place: "مستشفى النور", address: "شارع الثورة, القاهرة", time: "9 AM - 5 PM", location: "https://maps.google.com", phone: "+201234567890" },
+            { place: "مركز الشفاء", address: "شارع الجامعة, الإسكندرية", time: "10 AM - 6 PM", location: "https://maps.google.com", phone: "+201112223344" }
+        ];
 
-        const calendarIds = [ 
+        const tableBody = document.getElementById("table-body");
 
-            'h8go7kfqvv7bu8dm2g5he87ppk@group.calendar.google.com',  
+        placesData.forEach(data => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                <td>${data.place}</td>
+                <td>${data.address}</td>
+                <td>${data.time}</td>
+                <td><a href="${data.location}" target="_blank">View</a></td>
+                <td><a href="tel:${data.phone}">${data.phone}</a></td>
+            `;
+            tableBody.appendChild(row);
+        });
 
-'26kafb4ock4v1mf167928hf7ts@group.calendar.google.com',  
-
-'obnmdmn8cfuunl7u4muaq3rjcs@group.calendar.google.com',  
-
-'07168e8cfd9c5abea2a0cae62fea43ab8e1e150f84ae679e57cd8f4bcd3d1e17@group.calendar.google.com', 'uso1kuodjvanh8hg3ij74fv058@group.calendar.google.com',  
-
-'fqck7077phe60ar9e0ts3kvffs@group.calendar.google.com', 'aa69550f84c315d3d6ed79d9120f378718b4f7f7ce434b1113fda5591e214915@group.calendar.google.com', 'bab7vikg9prhm3vigd2ll0pup8@group.calendar.google.com', '852j5orksvcu61midgh6slsqo8@group.calendar.google.com', 'f3k381rs147vov3lhmb1k75nr0@group.calendar.google.com', 'fkmdjl11k97oef7i6s6j2touqs@group.calendar.google.com', '71ff33d7184d00a19b566897c2b431778f927d20c7f1656d3dbbf7c3607f7093@group.calendar.google.com', '05ibl09sinh4gut8lg8u84476o@group.calendar.google.com', '83c5fab1f3a9fca0c0120f4034deac45f9a0ee9c4344b9250475fa106f494365@group.calendar.google.com', 'abp127it7nmjmuhniq0qhj58bc@group.calendar.google.com', '4fagdtcnk3ol8ahussr8lack8k@group.calendar.google.com' 
-
-        ]; 
-
+             
  
  
 
         // قائمة ثابتة بأسماء التقويمات وألوانها 
 
-        const calendarNames = { 
-
-            'h8go7kfqvv7bu8dm2g5he87ppk@group.calendar.google.com': { name: 'أسنان 🦷', color: '#FFEBEE' }, 
-
-  '26kafb4ock4v1mf167928hf7ts@group.calendar.google.com': { name: 'علاج طبيعي 🦵', color: '#E8EAF6' }, 
-
-    'obnmdmn8cfuunl7u4muaq3rjcs@group.calendar.google.com': { name: 'باطن وقلب 🩺', color: '#FBE9E7' }, 
-
-'07168e8cfd9c5abea2a0cae62fea43ab8e1e150f84ae679e57cd8f4bcd3d1e17@group.calendar.google.com': { name: 'تغذية 🍏', color: '#E0F7FA' }, 
-
-            'uso1kuodjvanh8hg3ij74fv058@group.calendar.google.com': { name: 'أطفال 👶', color: '#FFF3E0' }, 
-
-            'fqck7077phe60ar9e0ts3kvffs@group.calendar.google.com': { name: 'أنف وأذن وحنجرة 👂', color: '#E3F2FD' }, 
-
-            'aa69550f84c315d3d6ed79d9120f378718b4f7f7ce434b1113fda5591e214915@group.calendar.google.com': { name: 'الجهاز الهضمى والكبد 🩺', color: '#E8F5E9' }, 
-
-         
-
-            'bab7vikg9prhm3vigd2ll0pup8@group.calendar.google.com': { name: 'تخاطب 🔊', color: '#EDE7F6' }, 
-
-             
-
-            '852j5orksvcu61midgh6slsqo8@group.calendar.google.com': { name: 'جراحة عامة 🔪', color: '#FFFDE7' }, 
-
-            'f3k381rs147vov3lhmb1k75nr0@group.calendar.google.com': { name: 'جلدية 💅', color: '#F1F8E9' }, 
-
-            'fkmdjl11k97oef7i6s6j2touqs@group.calendar.google.com': { name: 'رمد 👁️', color: '#E0F2F1' }, 
-
-            '71ff33d7184d00a19b566897c2b431778f927d20c7f1656d3dbbf7c3607f7093@group.calendar.google.com': { name: 'سونار 📺', color: '#FFF3E0' }, 
-
-            '05ibl09sinh4gut8lg8u84476o@group.calendar.google.com': { name: 'عظام 🦴', color: '#F3E5F5' }, 
-
-           
-
-            '83c5fab1f3a9fca0c0120f4034deac45f9a0ee9c4344b9250475fa106f494365@group.calendar.google.com': { name: 'مخ واعصاب 🧠', color: '#E1F5FE' }, 
-
-            'abp127it7nmjmuhniq0qhj58bc@group.calendar.google.com': { name: 'مسالك ⚕️', color: '#FCE4EC' }, 
-
-            '4fagdtcnk3ol8ahussr8lack8k@group.calendar.google.com': { name: 'نساء وتوليد 🤰', color: '#E8F5E9' } 
-
-        }; 
-
- 
+    
  
 
         let startDate, endDate; 
@@ -2115,7 +1994,7 @@ let index = 0;
         autoPlay = setInterval(autoSlide, 3000);
     });
 
- 
+    
 
     </script> 
 
