@@ -1,11 +1,8 @@
-<!DOCTYPE html> 
-
-<html lang="ar"> 
-
-<head> 
-
-    <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:image" content="https://drpeterramsis.github.io/insulin_ps/assets/psicon.png" />
     <meta property="og:image:alt" content="دعم مرضى الانسولين" />
     <meta property="og:image:type" content="image/png" />
@@ -13,100 +10,51 @@
     <meta property="og:image:height" content="512" />
     <meta property="og:title" content="دعم مرضى الانسولين" />
     <meta property="og:description" content="ارقام واماكن مراكز دعم مرضى الانوسلين" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <link rel="manifest" href="/insulin_ps/manifest.json">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk7JhWOVe9b6Y6lPt4o6HavI1k3JtXVfjgAh6w8p" crossorigin="anonymous">
-    <title>Insulin Patient Support</title> 
+    <title>دعم مرضى الانسولين</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
 
+        .carousel-container {
+            position: relative;
+            margin: 0 auto;
+            width: 100%;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
 
-    <style> 
-
-    
-
-body { 
-
-font-family: Arial, sans-serif; 
-background-color: white; 
-text-align: center; 
-padding: 10px; 
-
-} 
-
-
-html { 
-
-    font-size: 1.0rem; /* Base font size */ 
-
-} 
-
- 
-
- 
- 
-
-
-    .carousel-container {
-    padding: 0; /* Ensure no extra padding */
-    position: relative;
-    margin: auto;
-    width: 100%;
-    overflow: hidden;
-    border-radius: 20px; /* Applies to all edges */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-}
-
-
-.carousel-image {
-    width: 100%;
-    display: block; /* Remove extra space */
-
-}
-
-
-.banner-heading {
-    font-family: 'Alexandria', sans-serif;
-    font-size: 1.2rem;
-    text-align: center;
-    margin-top: 5px;
-    font-weight:bold;
-    color: #9e2a2f; /* Change this color if needed */
-}
-
-
-
- 
-.carousel-container {
-    padding: 0; /* Remove padding */
-    position: relative;
-    margin: 0 auto; /* Center the carousel */
-    width: 100%;
-
-    overflow: hidden; /* Prevent shadows from bleeding outside */
-    border-radius: 15px 15px 0px 0px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow to the carousel container */
-}
-
-.carousel {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    width: 100%; /* Ensure the carousel fits within its container */
-}
-
-.carousel img {
-    width: 100%;
-}
-
-
-
- /* Navigation Bar */
- .nav-bar {
+        .carousel {
             display: flex;
-            justify-content: space-around;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+        }
+
+        .carousel img {
+            width: 100%;
+            display: block;
+        }
+
+        .banner-heading {
+            font-family: 'Alexandria', sans-serif;
+            font-size: 1.5rem;
+            text-align: center;
+            margin: 20px 0;
+            font-weight: bold;
+            color: #9e2a2f;
+        }
+
+        .nav-bar {
+            display: flex;
+            justify-content: center;
             background-color: #8b1d41;
-            border-radius: 0px 0px 15px 15px;
-            padding: 1px 0;
+            padding: 10px 0;
             position: sticky;
             top: 0;
             width: 100%;
@@ -116,11 +64,11 @@ html {
         .nav-bar a {
             text-decoration: none;
             color: white;
-            font-size: 14px;
-            padding: 10px 15px;
+            font-size: 16px;
+            padding: 10px 20px;
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 10px;
             font-family: 'Alexandria', sans-serif;
         }
 
@@ -129,46 +77,32 @@ html {
             border-radius: 5px;
         }
 
-        .nav-bar i {
-            font-size: 14px;
-            font-weight:bold;
-
-        }
-
         .schedule-container {
-  width: 100%;
-  max-width: 800px;
-  margin: 5px auto;
-  padding: 5px;
-  background-color: #f9f9f9;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-  
-
-
-
-
-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
+            width: 90%;
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: center;
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid black; padding: 10px; text-align: center; }
+        th { background-color: #f2f2f2; }
+        .call-button, .map-button {
+            display: inline-block;
+            padding: 5px 10px;
+            margin: 2px;
+            text-decoration: none;
+            color: white;
+            border-radius: 5px;
         }
-        th {
-            background-color: #f2f2f2;
-        }
-    </style> 
+        .call-button { background-color: green; }
+        .map-button { background-color: blue; }
+    </style>
+</head>
+<body>
 
-</head> 
-
-<body> 
-
-    
     <div class="carousel-container">
         <div class="carousel">
             <img src="https://dl.dropboxusercontent.com/scl/fi/yoju2t3pjwytkzjkkfmzk/ps_banner.png?rlkey=00404jdmpyr7kymhpahxp6ckf&st=bgy86mgs" class="carousel-image">
@@ -180,117 +114,104 @@ table {
      <div class="nav-bar">
         <a href="tel:19790">
             Call Us <i class="fa-solid fa-phone"></i> اتصل بنا
-
-            </a>
+        </a>
     </div>
+    <div>
 
-    <div class="schedule-container">
-        <h1 class="banner-heading">اماكن دعم مرضى الانسولين</h1>
-
-        <input type="text" id="search" class="search-box" placeholder="Search..." onkeyup="searchTables()">
-
-    <div id="tables-container"></div>
-
-    <script>
-        const placesData = [
-            { zone: "Alexandria", place: "El Kharashy", address: "", day: "Saturday", time: "12 AM - 5 PM", location: "", phone: "" },
-            { zone: "Alexandria", place: "El Shaymaa K 21", address: "", day: "Saturday", time: "12 PM - 4 PM", location: "", phone: "" },
-            { zone: "Alexandria", place: "Nader PH", address: "", day: "Sunday", time: "10 AM - 6 PM", location: "", phone: "" },
-            { zone: "Alexandria", place: "Yehia Ph El Amerya", address: "", day: "Sunday", time: "11:30 PM - 3 PM", location: "", phone: "" },
-            { zone: "Beheira", place: "Dr Marzouk Araf Clinic Abo Homos", address: "", day: "Monday", time: "", location: "", phone: "" },
-            { zone: "Beheira", place: "Eslam Galal PH", address: "", day: "Monday", time: "12 PM - 4 PM", location: "", phone: "" },
-            { zone: "Kfr El Sheikh", place: "Al Andalous KFS 1", address: "", day: "Tuesday", time: "1 PM - 5 PM", location: "", phone: "" },
-            { zone: "Kfr El Sheikh", place: "El Shaab - Desouk 2", address: "", day: "Tuesday", time: "2 PM - 6 PM", location: "", phone: "" }
-        ];
-
-        const tablesContainer = document.getElementById("tables-container");
-        const groupedData = {};
-
-        placesData.forEach(data => {
-            if (!groupedData[data.zone]) {
-                groupedData[data.zone] = [];
-            }
-            groupedData[data.zone].push(data);
-        });
-
-        for (const zone in groupedData) {
-            const tableWrapper = document.createElement("div");
-            tableWrapper.innerHTML = `
-                <h3>${zone}</h3>
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>المكان</th>
-                            <th>العنوان</th>
-                            <th>اليوم</th>
-                            <th>الميعاد</th>
-                            <th>Location</th>
-                            <th>Phone Call</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        ${groupedData[zone].map(data => `
-                            <tr>
-                                <td>${data.place}</td>
-                                <td>${data.address}</td>
-                                <td>${data.day}</td>
-                                <td>${data.time}</td>
-                                <td><a href="${data.location}" target="_blank">View</a></td>
-                                <td><a href="tel:${data.phone}">${data.phone}</a></td>
-                            </tr>
-                        `).join("")}
-                    </tbody>
-                </table>
-            `;
-            tablesContainer.appendChild(tableWrapper);
-        }
-
-        function searchTables() {
-            let input = document.getElementById("search").value.toLowerCase();
-            let tables = document.querySelectorAll(".data-table tbody tr");
-            
-            tables.forEach(row => {
-                let text = row.textContent.toLowerCase();
-                row.style.display = text.includes(input) ? "" : "none";
-            });
-        }
-let index = 0;
-    const carousel = document.querySelector('.carousel');
-    const images = document.querySelectorAll('.carousel img');
-    const totalImages = images.length;
-
-    function moveSlide(step) {
-        index = (index + step + totalImages) % totalImages;
-        updateCarousel();
-    }
-
-    function updateCarousel() {
-        carousel.style.transform = `translateX(-${index * 100}%)`;
-    }
-
-    function autoSlide() {
-        moveSlide(1);
-    }
-
-    // Auto slide every 3 seconds
-    let autoPlay = setInterval(autoSlide, 3000);
-
-    // Stop autoplay when user hovers over the carousel
-    document.querySelector('.carousel-container').addEventListener('mouseenter', () => {
-        clearInterval(autoPlay);
-    });
-
-    // Resume autoplay when the user moves the mouse away
-    document.querySelector('.carousel-container').addEventListener('mouseleave', () => {
-        autoPlay = setInterval(autoSlide, 3000);
-    });
-
-    
-
-    </script> 
-
-</body> 
-
-</html> 
-
+        <h2>مراكز الدعم</h2>
  
+          <!-- Container for the tables -->
+    <div id="container"></div>
+        <script>
+         const centers = [
+    {"المحافظة": "الإسكندرية", "اليوم": "السبت", "المنطقة": "-", "المكان": "الخراشي", "المواعيد": "12 ظهرًا - 5 مساءً", "العنوان": "-", "رقم التليفون": "-", "الموقع": "-"},
+    {"المحافظة": "الإسكندرية", "اليوم": "السبت", "المنطقة": "-", "المكان": "الشيماء K 21", "المواعيد": "12 ظهرًا - 4 مساءً", "العنوان": "-", "رقم التليفون": "-", "الموقع": "-"},
+    {"المحافظة": "الإسكندرية", "اليوم": "السبت", "المنطقة": "-", "المكان": "عطاء عبد الله هانوفيل", "المواعيد": "6 مساءً - 10 مساءً", "العنوان": "-", "رقم التليفون": "-", "الموقع": "-"},
+    {"المحافظة": "الإسكندرية", "اليوم": "الأحد", "المنطقة": "-", "المكان": "نادر PH", "المواعيد": "10 صباحًا - 6 مساءً", "العنوان": "-", "رقم التليفون": "-", "الموقع": "-"},
+    {"المحافظة": "الإسكندرية", "اليوم": "الأحد", "المنطقة": "-", "المكان": "يحيى فارماسي الصالحية", "المواعيد": "11:30 صباحًا - 3 مساءً", "العنوان": "-", "رقم التليفون": "-", "الموقع": "-"},
+    {"المحافظة": "الإسكندرية", "اليوم": "الأحد", "المنطقة": "-", "المكان": "الصفوة فارماسي الصالحية", "المواعيد": "3:30 مساءً - 7 مساءً", "العنوان": "-", "رقم التليفون": "-", "الموقع": "-"},
+    {"المحافظة": "الإسكندرية", "اليوم": "الأحد", "المنطقة": "-", "المكان": "مايكل الجندي PH", "المواعيد": "6 مساءً - 9 مساءً", "العنوان": "-", "رقم التليفون": "-", "الموقع": "-"},
+    {"المحافظة": "الإسكندرية", "اليوم": "الاثنين", "المنطقة": "-", "المكان": "الشيماء K 21", "المواعيد": "12 ظهرًا - 4 مساءً", "العنوان": "كيلو 21", "رقم التليفون": "-", "الموقع": "-"},
+    {"المحافظة": "الإسكندرية", "اليوم": "الاثنين", "المنطقة": "-", "المكان": "فاراحت PH", "المواعيد": "10 مساءً - 11 مساءً", "العنوان": "-", "رقم التليفون": "-", "الموقع": "-"},
+    {"المحافظة": "الإسكندرية", "اليوم": "الاثنين", "المنطقة": "-", "المكان": "شريف شعبان", "المواعيد": "2 مساءً - 5 مساءً", "العنوان": "-", "رقم التليفون": "-", "الموقع": "-"},
+    {"المحافظة": "الإسكندرية", "اليوم": "الثلاثاء", "المنطقة": "-", "المكان": "نادر PH", "المواعيد": "11 صباحًا - 7 مساءً", "العنوان": "-", "رقم التليفون": "-", "الموقع": "-"},
+    {"المحافظة": "الإسكندرية", "اليوم": "الثلاثاء", "المنطقة": "-", "المكان": "شريف شعبان (فليمنج)", "المواعيد": "1 مساءً - 4 مساءً", "العنوان": "-", "رقم التليفون": "-", "الموقع": "-"},
+    {"المحافظة": "الإسكندرية", "اليوم": "الثلاثاء", "المنطقة": "-", "المكان": "شريف شعبان (فليمنج)", "المواعيد": "7 مساءً - 10 مساءً", "العنوان": "-", "رقم التليفون": "-", "الموقع": "-"},
+    {"المحافظة": "الإسكندرية", "اليوم": "الأربعاء", "المنطقة": "-", "المكان": "الخليل PH مصطفى كامل", "المواعيد": "11 صباحًا - 6 مساءً", "العنوان": "-", "رقم التليفون": "-", "الموقع": "-"},
+    {"المحافظة": "الإسكندرية", "اليوم": "الأربعاء", "المنطقة": "-", "المكان": "نادر PH", "المواعيد": "10 صباحًا - 2 مساءً", "العنوان": "-", "رقم التليفون": "-", "الموقع": "-"},
+    {"المحافظة": "الإسكندرية", "اليوم": "الأربعاء", "المنطقة": "-", "المكان": "الشيماء K 21", "المواعيد": "1 مساءً - 3 مساءً", "العنوان": "-", "رقم التليفون": "-", "الموقع": "-"},
+    {"المحافظة": "الإسكندرية", "اليوم": "الأربعاء", "المنطقة": "-", "المكان": "شريف شعبان", "المواعيد": "3 مساءً - 6 مساءً", "العنوان": "-", "رقم التليفون": "-", "الموقع": "-"},
+    {"المحافظة": "البحيرة", "اليوم": "السبت", "المنطقة": "-", "المكان": "إسلام جلال PH", "المواعيد": "12 ظهرًا - 4 مساءً", "العنوان": "-", "رقم التليفون": "-", "الموقع": "-"},
+    {"المحافظة": "البحيرة", "اليوم": "الأحد", "المنطقة": "-", "المكان": "د. مرزوق عرفه عيادة أبو حمص", "المواعيد": "-", "العنوان": "-", "رقم التليفون": "-", "الموقع": "-"},
+    {"المحافظة": "البحيرة", "اليوم": "الاثنين", "المنطقة": "-", "المكان": "عادل مكي PH", "المواعيد": "12 ظهرًا - 4 مساءً", "العنوان": "-", "رقم التليفون": "-", "الموقع": "-"},
+    {"المحافظة": "البحيرة", "اليوم": "الثلاثاء", "المنطقة": "-", "المكان": "إسلام جلال PH", "المواعيد": "12 ظهرًا - 4 مساءً", "العنوان": "-", "رقم التليفون": "-", "الموقع": "-"},
+    {"المحافظة": "البحيرة", "اليوم": "الأربعاء", "المنطقة": "-", "المكان": "عادل مكي PH", "المواعيد": "12 ظهرًا - 4 مساءً", "العنوان": "-", "رقم التليفون": "-", "الموقع": "-"},
+    {"المحافظة": "كفر الشيخ", "اليوم": "السبت", "المنطقة": "-", "المكان": "الأندلس KFS", "المواعيد": "1 مساءً - 5 مساءً", "العنوان": "-", "رقم التليفون": "-", "الموقع": "-"},
+    {"المحافظة": "كفر الشيخ", "اليوم": "الأحد", "المنطقة": "-", "المكان": "الشعاع - دسوق 2", "المواعيد": "2 مساءً - 6 مساءً", "العنوان": "-", "رقم التليفون": "-", "الموقع": "-"},
+    {"المحافظة": "كفر الشيخ", "اليوم": "الاثنين", "المنطقة": "-", "المكان": "الأندلس KFS", "المواعيد": "1 مساءً - 5 مساءً", "العنوان": "-", "رقم التليفون": "-", "الموقع": "-"},
+    {"المحافظة": "كفر الشيخ", "اليوم": "الأربعاء", "المنطقة": "-", "المكان": "الشعاع - دسوق 2", "المواعيد": "2 مساءً - 6 مساءً", "العنوان": "-", "رقم التليفون": "-", "الموقع": "-"}
+];
+// تصنيف البيانات بناءً على المحافظة واليوم
+const groupedData = {};
+
+centers.forEach(center => {
+    const محافظة = center["المحافظة"];
+    const يوم = center["اليوم"];
+
+    if (!groupedData[محافظة]) {
+        groupedData[محافظة] = {};
+    }
+    if (!groupedData[محافظة][يوم]) {
+        groupedData[محافظة][يوم] = [];
+    }
+
+    groupedData[محافظة][يوم].push(center);
+});
+
+// عرض البيانات في واجهة المستخدم
+const container = document.getElementById("container");
+
+for (const محافظة in groupedData) {
+    const محافظةDiv = document.createElement("div");
+    محافظةDiv.innerHTML = `<h2>${محافظة}</h2>`;
+    container.appendChild(محافظةDiv);
+
+    for (const يوم in groupedData[محافظة]) {
+        const يومDiv = document.createElement("div");
+        يومDiv.innerHTML = `<h3>${يوم}</h3>`;
+        container.appendChild(يومDiv);
+
+        const table = document.createElement("table");
+        table.innerHTML = `
+            <thead>
+                <tr>
+                    <th>المنطقة</th>
+                    <th>المكان</th>
+                    <th>المواعيد</th>
+                    <th>العنوان</th>
+                    <th>رقم التليفون</th>
+                    <th>الموقع</th>
+                </tr>
+            </thead>
+            <tbody id="table-body-${محافظة}-${يوم}"></tbody>
+        `;
+        container.appendChild(table);
+
+        const tableBody = document.getElementById(`table-body-${محافظة}-${يوم}`);
+        groupedData[محافظة][يوم].forEach(center => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                <td>${center["المنطقة"]}</td>
+                <td>${center["المكان"]}</td>
+                <td>${center["المواعيد"]}</td>
+                <td>${center["العنوان"]}</td>
+                <td><a href="tel:${center["رقم التليفون"]}" class="call-button">اتصل الآن</a></td>
+                <td><a href="https://maps.google.com/?q=${center["الموقع"]}" target="_blank" class="map-button">افتح في الخرائط</a></td>
+            `;
+            tableBody.appendChild(row);
+        });
+    }
+}
+        </script>
+</body>
+</html>
